@@ -11,7 +11,7 @@ BEGIN {
     eval "require DBI";
 }
 
-$VERSION=0.11;
+$VERSION=0.12;
 
 our $AUTOLOAD;
 
@@ -363,6 +363,26 @@ object to do that by specifying HTML::Debug->new(1).
 =pod
 
 =back
+
+=head1 Mason config
+
+Here is how you would configure HTML::Debug to work with HTML::Mason:
+
+In httpd.conf:
+PerlSetVar MasonAllowGlobals $d
+
+In autohandler:
+<%once>
+use HTML::Debug;
+</%once>
+
+<%init>
+local $d = HTML::Debug->new();
+</%init>
+
+<%cleanup>
+$m->print( $d->make() );
+</%cleanup>
 
 =head1 BUGS
 

@@ -3,7 +3,7 @@ Greetings!
 Thank you for trying out HTML::Debug.  Documentation should be available in POD
 format from within Debug.pm.
 
-Text::ConvertPlatform is Copyright 2007 Mike Randall. All rights reserved. 
+HTML::Debug is Copyright 2007 Mike Randall. All rights reserved. 
 This program is free software; you can redistribute it and/or modify it under 
 the same terms as Perl itself.
 
