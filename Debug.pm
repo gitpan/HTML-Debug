@@ -1,14 +1,17 @@
 package HTML::Debug;
 
 use strict;
-use DBI;
 use Data::Dumper;
 use HTML::Entities;
 use vars qw($VERSION);
 use overload '+'  => \&_add, '+=' => \&_add,
              '""' => \&make;
 
-$VERSION=0.10;
+BEGIN {
+    eval "require DBI";
+}
+
+$VERSION=0.11;
 
 our $AUTOLOAD;
 
